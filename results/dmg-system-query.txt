@@ -1,0 +1,11 @@
+Rank UUID                                 Control Address   Fault Domain             State  Reason 
+---- ----                                 ---------------   ------------             -----  ------ 
+0    8cf4e0b7-0f16-44b9-ba5e-2b97ddc3837b 10.17.11.46:10001 /daos09.ftm.alcf.anl.gov Joined        
+1    3dff6da9-0305-4e8d-bc29-5e72d4e4f3db 10.17.11.48:10001 /daos11.ftm.alcf.anl.gov Joined        
+2    dd8aa399-de75-419f-bd79-649579aed75c 10.17.11.48:10001 /daos11.ftm.alcf.anl.gov Joined        
+3    15830fa1-9326-4b60-9d7c-e8bd73f44d3d 10.17.11.47:10001 /daos10.ftm.alcf.anl.gov Joined        
+4    f6e79db4-00ed-4c21-a312-aa5eb6e018ae 10.17.11.47:10001 /daos10.ftm.alcf.anl.gov Joined        
+5    c81dba41-a9bc-4efe-b791-7d7beb9bc3cf 10.17.11.46:10001 /daos09.ftm.alcf.anl.gov Joined        
+6    ceed72af-885b-4d13-a141-71495858fac4 10.17.11.49:10001 /daos12.ftm.alcf.anl.gov Joined        
+7    e539077c-fad0-4f1b-b40f-e9772d697afe 10.17.11.49:10001 /daos12.ftm.alcf.anl.gov Joined        
+

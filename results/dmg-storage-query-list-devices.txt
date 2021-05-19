@@ -1,0 +1,28 @@
+------
+daos09
+------
+  Devices
+    UUID:1d4d0d0c-d224-420d-beea-8e632e101794 [TrAddr:0000:1a:00.0]
+      Targets:[0 6 12] Rank:0 State:NORMAL
+    UUID:780a2422-af6e-4718-9300-9273d9594bbc [TrAddr:0000:19:00.0]
+      Targets:[1 7 13] Rank:0 State:NORMAL
+    UUID:c33bcded-c253-493e-a09d-2394dd707db9 [TrAddr:0000:3e:00.0]
+      Targets:[2 8 14] Rank:0 State:NORMAL
+    UUID:f022d807-b81a-4b1f-a9ad-cf2b691495c4 [TrAddr:0000:3d:00.0]
+      Targets:[3 9 15] Rank:0 State:NORMAL
+    UUID:9a592a77-0279-4840-affe-2cf2353e3cec [TrAddr:0000:3c:00.0]
+      Targets:[4 10 16] Rank:0 State:NORMAL
+    UUID:33d8c57c-a61d-4078-9816-3ad85974f8bd [TrAddr:0000:3b:00.0]
+      Targets:[5 11 17] Rank:0 State:NORMAL
+    UUID:d80d1934-b3ba-4e13-bebe-4dba0111dfbb [TrAddr:0000:88:00.0]
+      Targets:[0 6 12] Rank:5 State:NORMAL
+    UUID:c418b6ab-b337-42fc-a40f-c0906caf6e62 [TrAddr:0000:b2:00.0]
+      Targets:[1 7 13] Rank:5 State:NORMAL
+    UUID:0edffcc5-189b-4743-ba40-5d497c801752 [TrAddr:0000:b1:00.0]
+      Targets:[2 8 14] Rank:5 State:NORMAL
+    UUID:156164f7-2b5d-4d81-999e-a10b96c7f51a [TrAddr:0000:b0:00.0]
+      Targets:[3 9 15] Rank:5 State:NORMAL
+    UUID:f9776ee7-a817-4c23-9fef-9eededa0be65 [TrAddr:0000:87:00.0]
+      Targets:[4 10 16] Rank:5 State:NORMAL
+    UUID:c529f402-62e2-4d83-bf27-be9a485f341e [TrAddr:0000:af:00.0]
+      Targets:[5 11 17] Rank:5 State:NORMAL
