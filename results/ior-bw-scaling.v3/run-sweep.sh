@@ -77,8 +77,8 @@ for paramset in "${permutations[@]}"; do
   # to sniff out output files that contain write results without read results
   # explicitly!
   output_bn="ior-n${numnodes}ppn${ppn}t${xsize}.${iter}"
-  output_f="$PWD/${output_bn}.out"
-  err_f="$PWD/${output_bn}.err"
+  output_f="$PWD/${output_bn}-${access}.out"
+  err_f="$PWD/${output_bn}-${access}.err"
   if [ -f "${output_f}" ]; then
     if [ "$access" == "write" ]; then
       echo "[$(date)] $output_f exists for writes; skipping"

@@ -21,7 +21,9 @@ mpirun -ppn 1 -f $COBALT_NODEFILE -genvall mkdir -vp "$DFUSE_MOUNT"
 mpirun -ppn 1 -f $COBALT_NODEFILE -genvall dfuse --pool "$DAOS_POOL" --container "$DAOS_CONT" -m "$DFUSE_MOUNT" &
 sleep 2
 echo "Mounted ${DAOS_POOL}/${DAOS_CONT} at $DFUSE_MOUNT"
+export LD_PRELOAD="/soft/storage/daos/rhel/daos/install/lib64/libioil.so"
 XXX
+unset LD_PRELOAD
 mpirun -ppn 1 -f $COBALT_NODEFILE -genvall fusermount3 -u "$DFUSE_MOUNT"
 mpirun -ppn 1 -f $COBALT_NODEFILE -genvall killall dfuse
 mpirun -ppn 1 -f $COBALT_NODEFILE -genvall killall daos_agent

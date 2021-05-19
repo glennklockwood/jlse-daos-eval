@@ -61,14 +61,14 @@ else
     accesses=($input_access)
 fi
 
-for access in ${accesses[@]}; do
-  for i in ${xfersizes[@]}; do
-    for j in ${numnodeses[@]};
-      do for k in ${ppns[@]};
-        do for l in 0 1 2 3 4;
+for access in ${accesses[@]}
+  do for i in ${xfersizes[@]}
+    do for j in ${numnodeses[@]}
+      do for k in ${ppns[@]}
+        do for l in 0 #1 2 3 4
           do echo "access=$access xfersize=$i numnodes=$j ppn=$k iter=$l";
-        done;
-      done;
-    done;
+        done
+      done
+    done
   done
 done
