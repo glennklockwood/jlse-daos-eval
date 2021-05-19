@@ -77,8 +77,8 @@ for paramset in "${permutations[@]}"; do
   # to sniff out output files that contain write results without read results
   # explicitly!
   output_bn="ior-n${numnodes}ppn${ppn}t${xsize}.${iter}"
-  output_f="${output_bn}.out"
-  err_f="${output_bn}.err"
+  output_f="$PWD/${output_bn}.out"
+  err_f="$PWD/${output_bn}.err"
   if [ -f "${output_f}" ]; then
     if [ "$access" == "write" ]; then
       echo "[$(date)] $output_f exists for writes; skipping"
@@ -90,7 +90,7 @@ for paramset in "${permutations[@]}"; do
   fi
 
   # if reading but stonewall doesn't exist, ior will fail when it hits EOF
-  stonewall_f="${output_bn}.sws"
+  stonewall_f="$PWD/${output_bn}.sws"
   if [ "$access" == "read" ]; then
     if [ ! -f "$stonewall_f" ]; then
       echo "[$(date)] $stonewall_f does not exist for ${output_bn}; skipping"
@@ -118,15 +118,16 @@ for paramset in "${permutations[@]}"; do
                  -vv"
   set -x
   set -e
-  tmpfile=$(mktemp)
+  tmpfile="$RANDOM.qsub"
+  touch "$tmpfile"
   chmod +x "$tmpfile"
   mpirun="$SRUN -ppn $ppn \"${ior}\" $base_ior_args ${access_params[$access]} 2>>\"${err_f}\" > \"$output_f\""
-  sed -e "s@^XXX\$@${mpirun}@" run-ior.qsub > $tmpfile
+  sed -e "s@^XXX\$@${mpirun}@" run-ior.qsub > "$tmpfile"
   cat $tmpfile
   # qsub -q presque -n 1 -t 0:30:00 -I
-  jid=$(qsub -q presque -n ${numnodes} -t 30 $tmpfile)
-  cqwait $jid
-  rm -v $tmpfile
+  jid=$(qsub -q presque -n ${numnodes} -t 30 "$tmpfile")
+  cqwait "$jid"
+  rm -v "$tmpfile"
   set +x
   set +e
 done
