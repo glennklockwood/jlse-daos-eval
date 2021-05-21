@@ -1,0 +1,57 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Thu May 20 21:16:39 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 32m -t 32m -s 131072 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n1ppn4t33554432.0.sws -o /tmp/glock.dfuse/ior-n1ppn4t33554432.0.data -vv -w -k
+Machine             : Linux skylake15.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Thu May 20 21:16:39 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 3.8%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 4
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n1ppn4t33554432.0.data
+access              : file-per-process
+type                : independent
+segments            : 131072
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 1
+tasks               : 4
+clients per node    : 4
+repetitions         : 1
+xfersize            : 32 MiB
+blocksize           : 32 MiB
+aggregate filesize  : 16 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+Commencing write performance test: Thu May 20 21:16:39 2021
+3: stonewalling pairs accessed: 649
+2: stonewalling pairs accessed: 647
+1: stonewalling pairs accessed: 649
+0: stonewalling pairs accessed: 642
+stonewalling pairs accessed min: 642 max: 649 -- min data: 20.1 GiB mean data: 20.2 GiB time: 45.1s
+WARNING: Expected aggregate file size       = 17592186044416.
+WARNING: Stat() of aggregate file size      = 87107305472.
+WARNING: Using actual aggregate bytes moved = 87107305472.
+WARNING: maybe caused by deadlineForStonewalling
+write     1811.81    57.00      45.55       32768      32768      0.305256   45.55      0.000030   45.85      0   
+Max Write: 1811.81 MiB/sec (1899.82 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        1811.81    1811.81    1811.81       0.00      56.62      56.62      56.62       0.00   45.85036      45.06       1837.22     0      4   4    1   1     1        1         0    0 131072 33554432 33554432   83072.0 POSIX      0
+Finished            : Thu May 20 21:17:24 2021

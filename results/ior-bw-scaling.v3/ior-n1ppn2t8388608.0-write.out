@@ -1,0 +1,53 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Thu May 20 23:53:32 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 8m -t 8m -s 1048576 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n1ppn2t8388608.0.sws -o /tmp/glock.dfuse/ior-n1ppn2t8388608.0.data -vv -w -k
+Machine             : Linux skylake15.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Thu May 20 23:53:32 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 3.8%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 2
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n1ppn2t8388608.0.data
+access              : file-per-process
+type                : independent
+segments            : 1048576
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 1
+tasks               : 2
+clients per node    : 2
+repetitions         : 1
+xfersize            : 8 MiB
+blocksize           : 8 MiB
+aggregate filesize  : 16 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+no striping to set
+Commencing write performance test: Thu May 20 23:53:32 2021
+0: stonewalling pairs accessed: 2552
+stonewalling pairs accessed min: 2543 max: 2552 -- min data: 19.9 GiB mean data: 19.9 GiB time: 45.0s
+1: stonewalling pairs accessed: 2543
+WARNING: Expected aggregate file size       = 17592186044416.
+WARNING: Stat() of aggregate file size      = 42815455232.
+WARNING: Using actual aggregate bytes moved = 42815455232.
+WARNING: maybe caused by deadlineForStonewalling
+write     897.54     113.01     45.03       8192       8192       0.328696   45.16      0.000019   45.49      0   
+Max Write: 897.54 MiB/sec (941.14 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write         897.54     897.54     897.54       0.00     112.19     112.19     112.19       0.00   45.49328      45.01        905.59     0      2   2    1   1     1        1         0    0 1048576  8388608  8388608   40832.0 POSIX      0
+Finished            : Thu May 20 23:54:17 2021

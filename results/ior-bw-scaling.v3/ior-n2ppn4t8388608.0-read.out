@@ -1,0 +1,59 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Thu May 20 22:34:51 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 8m -t 8m -s 262144 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n2ppn4t8388608.0.sws -o /tmp/glock.dfuse/ior-n2ppn4t8388608.0.data -vv -r
+Machine             : Linux skylake15.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Thu May 20 22:34:51 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 4.9%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 8
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n2ppn4t8388608.0.data
+access              : file-per-process
+type                : independent
+segments            : 262144
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 2
+tasks               : 8
+clients per node    : 4
+repetitions         : 1
+xfersize            : 8 MiB
+blocksize           : 8 MiB
+aggregate filesize  : 16 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing read performance test: Thu May 20 22:34:52 2021
+
+0: stonewalling pairs accessed: 1525
+2: stonewalling pairs accessed: 1544
+5: stonewalling pairs accessed: 1546
+4: stonewalling pairs accessed: 1543
+7: stonewalling pairs accessed: 1562
+6: stonewalling pairs accessed: 1547
+3: stonewalling pairs accessed: 1549
+1: stonewalling pairs accessed: 1543
+stonewalling pairs accessed min: 1525 max: 1562 -- min data: 11.9 GiB mean data: 12.1 GiB time: 45.0s
+WARNING: Expected aggregate file size       = 17592186044416.
+WARNING: Stat() of aggregate file size      = 144619601920.
+WARNING: Using actual aggregate bytes moved = 104824045568.
+WARNING: maybe caused by deadlineForStonewalling
+read      2156.55    271.69     45.99       8192       8192       0.361348   45.99      0.000122   46.36      0   
+remove    -          -          -           -          -          -          -          -          0.245964   0   
+Max Read:  2156.55 MiB/sec (2261.31 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+read         2156.55    2156.55    2156.55       0.00     269.57     269.57     269.57       0.00   46.35547      45.03       2195.87     0      8   4    1   1     1        1         0    0 262144  8388608  8388608   99968.0 POSIX      0
+Finished            : Thu May 20 22:35:38 2021

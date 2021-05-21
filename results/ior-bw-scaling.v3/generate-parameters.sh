@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DEFAULT_XFERSIZES="32m 8m 4m 1m 512k 4k 2880"
-DEFAULT_NUMNODESES="1 2 4 8" # terrible grammar
+DEFAULT_NUMNODESES="4 8 2 1" # terrible grammar
 DEFAULT_PPNS="16 8 4 2 1"
 DEFAULT_ACCESSES="write read"
 
@@ -61,11 +61,11 @@ else
     accesses=($input_access)
 fi
 
-for access in ${accesses[@]}
-  do for i in ${xfersizes[@]}
-    do for j in ${numnodeses[@]}
-      do for k in ${ppns[@]}
-        do for l in 0 #1 2 3 4
+for i in ${xfersizes[@]}
+  do for j in ${numnodeses[@]}
+    do for k in ${ppns[@]}
+      do for l in 0 #1 2 3 4
+        do for access in ${accesses[@]}
           do echo "access=$access xfersize=$i numnodes=$j ppn=$k iter=$l";
         done
       done
