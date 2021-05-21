@@ -1,0 +1,172 @@
+DAOS Agent v1.2 (pid 209116) listening on /tmp/glock-daos_agent/daos_agent.sock
+DAOS Agent v1.2 (pid 80950) listening on /tmp/glock-daos_agent/daos_agent.sock
+DAOS Agent v1.2 (pid 114989) listening on /tmp/glock-daos_agent/daos_agent.sock
+Using pool cce33fae-0b21-4c82-b4ab-f99433bdf6ae and container b11ee85d-cbc2-413a-87c8-7b3292729bb4
+Mounted cce33fae-0b21-4c82-b4ab-f99433bdf6ae/b11ee85d-cbc2-413a-87c8-7b3292729bb4 at /tmp/glock.dfuse
+ior WARNING: preallocation only available in MPIIO.  Using value of 0.
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Fri May 21 04:03:43 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -w -F -e -g -v -t 1m -b 1g -s 4 -z -k -p -o /tmp/glock.dfuse/randio -vv -k
+Machine             : Linux skylake15.ftm.alcf.anl.gov 3.10.0-1062.9.1.el7.x86_64 #1 SMP Mon Dec 2 08:31:54 EST 2019 x86_64
+Using synchronized MPI timer
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Fri May 21 04:03:43 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 4.3%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 84
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/randio
+access              : file-per-process
+type                : independent
+segments            : 4
+ordering in a file  : random
+ordering inter file : no tasks offsets
+nodes               : 3
+tasks               : 84
+clients per node    : 28
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 1 GiB
+aggregate filesize  : 336 GiB
+
+Results: 
+Using Time Stamp 1621569823 (0x60a7311f) for Data Signature
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+Commencing write performance test: Fri May 21 04:03:44 2021
+write     5562       5601       0.057951    1048576    1024.00    0.422502   61.43      0.006657   61.86      0   
+Max Write: 5561.94 MiB/sec (5832.11 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        5561.94    5561.94    5561.94       0.00    5561.94    5561.94    5561.94       0.00   61.86047         NA            NA     0     84  28    1   1     0        1         0    0      4 1073741824  1048576  344064.0 POSIX      0
+Finished            : Fri May 21 04:04:46 2021
+ior WARNING: preallocation only available in MPIIO.  Using value of 0.
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Fri May 21 04:04:48 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -r -F -e -g -v -t 4k -b 256m -D 45 -s 32 -z -p -o /tmp/glock.dfuse/randio -vv
+Machine             : Linux skylake15.ftm.alcf.anl.gov 3.10.0-1062.9.1.el7.x86_64 #1 SMP Mon Dec 2 08:31:54 EST 2019 x86_64
+Using synchronized MPI timer
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Fri May 21 04:04:48 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 5.7%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 84
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/randio
+access              : file-per-process
+type                : independent
+segments            : 32
+ordering in a file  : random
+ordering inter file : no tasks offsets
+nodes               : 3
+tasks               : 84
+clients per node    : 28
+repetitions         : 1
+xfersize            : 4096 bytes
+blocksize           : 256 MiB
+aggregate filesize  : 672 GiB
+stonewallingTime    : 45
+stoneWallingWearOut : 0
+
+Results: 
+Using Time Stamp 1621569888 (0x60a73160) for Data Signature
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing read performance test: Fri May 21 04:04:48 2021
+
+ior ERROR: read(19, 0x22cf000, 4096) returned EOF prematurely, (../../src/aiori-POSIX.c:707)

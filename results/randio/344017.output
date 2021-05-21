@@ -1,0 +1,324 @@
+DAOS Agent v1.2 (pid 106772) listening on /tmp/glock-daos_agent/daos_agent.sock
+DAOS Agent v1.2 (pid 201032) listening on /tmp/glock-daos_agent/daos_agent.sock
+Using pool cce33fae-0b21-4c82-b4ab-f99433bdf6ae and container b11ee85d-cbc2-413a-87c8-7b3292729bb4
+Mounted cce33fae-0b21-4c82-b4ab-f99433bdf6ae/b11ee85d-cbc2-413a-87c8-7b3292729bb4 at /tmp/glock.dfuse
+ior WARNING: preallocation only available in MPIIO.  Using value of 0.
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Fri May 21 03:43:24 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -w -F -e -g -v -t 1m -b 1g -s 8 -z -k -p -o /tmp/glock.dfuse/randio -vv -k
+Machine             : Linux skylake15.ftm.alcf.anl.gov 3.10.0-1062.9.1.el7.x86_64 #1 SMP Mon Dec 2 08:31:54 EST 2019 x86_64
+Using synchronized MPI timer
+Start time skew across all tasks: 0.09 sec
+TestID              : 0
+StartTime           : Fri May 21 03:43:24 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 4.0%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 224
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/randio
+access              : file-per-process
+type                : independent
+segments            : 8
+ordering in a file  : random
+ordering inter file : no tasks offsets
+nodes               : 2
+tasks               : 224
+clients per node    : 112
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 1 GiB
+aggregate filesize  : 1.75 TiB
+
+Results: 
+Using Time Stamp 1621568604 (0x60a72c5c) for Data Signature
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to setno striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+Commencing write performance test: Fri May 21 03:43:52 2021
+write     3535.31    3659       0.419504    1048576    1024.00    17.38      501.55     0.141988   519.05     0   
+Max Write: 3535.31 MiB/sec (3707.04 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        3535.31    3535.31    3535.31       0.00    3535.31    3535.31    3535.31       0.00  519.05182         NA            NA     0    224 112    1   1     0        1         0    0      8 1073741824  1048576 1835008.0 POSIX      0
+Finished            : Fri May 21 03:52:15 2021
+ior WARNING: preallocation only available in MPIIO.  Using value of 0.
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Fri May 21 03:52:26 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -r -F -e -g -v -t 4k -b 256m -D 45 -s 32 -z -p -o /tmp/glock.dfuse/randio -vv
+Machine             : Linux skylake15.ftm.alcf.anl.gov 3.10.0-1062.9.1.el7.x86_64 #1 SMP Mon Dec 2 08:31:54 EST 2019 x86_64
+Using synchronized MPI timer
+Start time skew across all tasks: 0.11 sec
+TestID              : 0
+StartTime           : Fri May 21 03:52:26 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 11.7%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 224
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/randio
+access              : file-per-process
+type                : independent
+segments            : 32
+ordering in a file  : random
+ordering inter file : no tasks offsets
+nodes               : 2
+tasks               : 224
+clients per node    : 112
+repetitions         : 1
+xfersize            : 4096 bytes
+blocksize           : 256 MiB
+aggregate filesize  : 1.75 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 0
+
+Results: 
+Using Time Stamp 1621569146 (0x60a72e7a) for Data Signature
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing read performance test: Fri May 21 03:52:39 2021
+
+WARNING: Expected aggregate file size       = 1924145348608.
+WARNING: Stat() of aggregate file size      = 1924145348608.
+WARNING: Using actual aggregate bytes moved = 12880785408.
+WARNING: maybe caused by deadlineForStonewalling
+read      207.88     68371      0.000693    262144     4.00       12.92      46.00      0.132883   59.09      0   
+remove    -          -          -           -          -          -          -          -          3.92       0   
+Max Read:  207.88 MiB/sec (217.97 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+read          207.88     207.88     207.88       0.00   53216.07   53216.07   53216.07       0.00   59.09348         NA            NA     0    224 112    1   1     0        1         0    0     32 268435456     4096   12284.1 POSIX      0
+Finished            : Fri May 21 03:53:30 2021
+Signal received.  Caught terminated; shutting down
+Signal received.  Caught terminated; shutting down

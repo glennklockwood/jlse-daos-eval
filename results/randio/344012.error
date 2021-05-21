@@ -1,0 +1,25 @@
+fusermount3: entry for /tmp/glock.dfuse not found in /etc/mtab
+fusermount3: entry for /tmp/glock.dfuse not found in /etc/mtab
+dfuse: no process found
+dfuse: no process found
+daos_agent: no process found
+daos_agent: no process found
++ mpirun -ppn 1 -f /var/tmp/cobalt.344012 -genvall mkdir -vp /tmp/glock-daos_agent
++ sleep 2
++ mpirun -ppn 1 -f /var/tmp/cobalt.344012 -genvall daos_agent -i -o /home/daos/sles/yaml-file/daos-r_agent.yml -l /tmp/glock-daos-agent.log -s /tmp/glock-daos_agent
+++ head -n1
+++ daos pool list-cont --pool cce33fae-0b21-4c82-b4ab-f99433bdf6ae
++ DAOS_CONT=b11ee85d-cbc2-413a-87c8-7b3292729bb4
++ '[' -z b11ee85d-cbc2-413a-87c8-7b3292729bb4 ']'
++ echo 'Using pool cce33fae-0b21-4c82-b4ab-f99433bdf6ae and container b11ee85d-cbc2-413a-87c8-7b3292729bb4'
++ mpirun -ppn 1 -f /var/tmp/cobalt.344012 -genvall mkdir -vp /tmp/glock.dfuse
++ sleep 2
++ mpirun -ppn 1 -f /var/tmp/cobalt.344012 -genvall dfuse --pool cce33fae-0b21-4c82-b4ab-f99433bdf6ae --container b11ee85d-cbc2-413a-87c8-7b3292729bb4 -m /tmp/glock.dfuse
++ echo 'Mounted cce33fae-0b21-4c82-b4ab-f99433bdf6ae/b11ee85d-cbc2-413a-87c8-7b3292729bb4 at /tmp/glock.dfuse'
++ export LD_PRELOAD=/soft/storage/daos/rhel/daos/install/lib64/libioil.so
++ LD_PRELOAD=/soft/storage/daos/rhel/daos/install/lib64/libioil.so
++ mpirun -f /var/tmp/cobalt.344012 -ppn 56 -genvall /home/glock/src/glior-3.3/install.jlse/bin/ior -w -F -e -g -v -t 4k -b 32g -D 45 -s 1 -z -k -p -o /tmp/glock.dfuse/randio -vv
++ unset LD_PRELOAD
++ mpirun -ppn 1 -f /var/tmp/cobalt.344012 -genvall fusermount3 -u /tmp/glock.dfuse
++ mpirun -ppn 1 -f /var/tmp/cobalt.344012 -genvall killall dfuse
++ mpirun -ppn 1 -f /var/tmp/cobalt.344012 -genvall killall daos_agent

@@ -1,0 +1,25 @@
+Jobid: 344017
+qsub --mode script -n 2 -q presque -t 0:15:00 randio-read.qsub
+Fri May 21 03:42:46 2021 +0000 (UTC) submitted with cwd set to: /home/glock/src/jlse-daos-eval/results/randio
+jobid 344017 submitted from terminal /dev/pts/51
+Fri May 21 03:43:08 2021 +0000 (UTC) 
+Fri May 21 03:43:08 2021 +0000 (UTC) Command: '/usr/bin/ssh' 'skylake15' '/usr/libexec/cobalt/cobalt-launcher.py' '--nf' '/var/tmp/cobalt.344017' '--jobid' '344017' '--cwd' '/home/glock/src/jlse-daos-eval/results/randio' '--env' 'COBALT_JOBID=344017' '/home/glock/src/jlse-daos-eval/results/randio/randio-read.qsub'
+Fri May 21 03:43:08 2021 +0000 (UTC) 
+Fri May 21 03:43:08 2021 +0000 (UTC) Environment:
+Fri May 21 03:43:08 2021 +0000 (UTC) SHELL=/bin/bash
+Fri May 21 03:43:08 2021 +0000 (UTC) COBALT_NODEFILE=/tmp/tmpmfiR7b
+Fri May 21 03:43:08 2021 +0000 (UTC) COBALT_PARTNAME=skylake15
+Fri May 21 03:43:08 2021 +0000 (UTC) COBALT_JOBID=344017
+Fri May 21 03:43:08 2021 +0000 (UTC) COBALT_STARTTIME=1621568571
+Fri May 21 03:43:08 2021 +0000 (UTC) LOGNAME=glock
+Fri May 21 03:43:08 2021 +0000 (UTC) USER=glock
+Fri May 21 03:43:08 2021 +0000 (UTC) COBALT_ENDTIME=1621569471
+Fri May 21 03:43:08 2021 +0000 (UTC) COBALT_PARTSIZE=2
+Fri May 21 03:43:08 2021 +0000 (UTC) HOME=/home/glock
+Fri May 21 03:43:08 2021 +0000 (UTC) COBALT_JOBSIZE=2
+Fri May 21 03:43:08 2021 +0000 (UTC) 
+Fri May 21 03:43:08 2021 +0000 (UTC) Info: stdin received from /dev/null
+Fri May 21 03:43:08 2021 +0000 (UTC) Info: stdout sent to /home/glock/src/jlse-daos-eval/results/randio/344017.output
+Fri May 21 03:43:08 2021 +0000 (UTC) Info: stderr sent to /home/glock/src/jlse-daos-eval/results/randio/344017.error
+Fri May 21 03:43:08 2021 +0000 (UTC) 
+Fri May 21 03:53:51 2021 +0000 (UTC) Info: task completed normally with an exit code of 0; initiating job cleanup and removal

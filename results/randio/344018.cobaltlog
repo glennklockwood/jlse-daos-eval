@@ -1,0 +1,5 @@
+Jobid: 344018
+qsub --mode script -n 4 -q presque -t 0:15:00 randio-read.qsub
+Fri May 21 03:55:42 2021 +0000 (UTC) submitted with cwd set to: /home/glock/src/jlse-daos-eval/results/randio
+jobid 344018 submitted from terminal /dev/pts/51
+Fri May 21 04:06:41 2021 +0000 (UTC) Info: user delete requested; removing job from the queue

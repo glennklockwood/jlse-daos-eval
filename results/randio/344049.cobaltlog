@@ -1,0 +1,25 @@
+Jobid: 344049
+qsub --mode script -n 3 -q presque -t 0:15:00 randio-write.qsub
+Fri May 21 05:02:27 2021 +0000 (UTC) submitted with cwd set to: /home/glock/src/jlse-daos-eval/results/randio
+jobid 344049 submitted from terminal /dev/pts/51
+Fri May 21 05:02:43 2021 +0000 (UTC) 
+Fri May 21 05:02:43 2021 +0000 (UTC) Command: '/usr/bin/ssh' 'skylake15' '/usr/libexec/cobalt/cobalt-launcher.py' '--nf' '/var/tmp/cobalt.344049' '--jobid' '344049' '--cwd' '/home/glock/src/jlse-daos-eval/results/randio' '--env' 'COBALT_JOBID=344049' '/home/glock/src/jlse-daos-eval/results/randio/randio-write.qsub'
+Fri May 21 05:02:43 2021 +0000 (UTC) 
+Fri May 21 05:02:43 2021 +0000 (UTC) Environment:
+Fri May 21 05:02:43 2021 +0000 (UTC) SHELL=/bin/bash
+Fri May 21 05:02:43 2021 +0000 (UTC) COBALT_NODEFILE=/tmp/tmpCEuwdK
+Fri May 21 05:02:43 2021 +0000 (UTC) COBALT_PARTNAME=skylake15
+Fri May 21 05:02:43 2021 +0000 (UTC) COBALT_JOBID=344049
+Fri May 21 05:02:43 2021 +0000 (UTC) COBALT_STARTTIME=1621573350
+Fri May 21 05:02:43 2021 +0000 (UTC) LOGNAME=glock
+Fri May 21 05:02:43 2021 +0000 (UTC) USER=glock
+Fri May 21 05:02:43 2021 +0000 (UTC) COBALT_ENDTIME=1621574250
+Fri May 21 05:02:43 2021 +0000 (UTC) COBALT_PARTSIZE=3
+Fri May 21 05:02:43 2021 +0000 (UTC) HOME=/home/glock
+Fri May 21 05:02:43 2021 +0000 (UTC) COBALT_JOBSIZE=3
+Fri May 21 05:02:43 2021 +0000 (UTC) 
+Fri May 21 05:02:43 2021 +0000 (UTC) Info: stdin received from /dev/null
+Fri May 21 05:02:43 2021 +0000 (UTC) Info: stdout sent to /home/glock/src/jlse-daos-eval/results/randio/344049.output
+Fri May 21 05:02:43 2021 +0000 (UTC) Info: stderr sent to /home/glock/src/jlse-daos-eval/results/randio/344049.error
+Fri May 21 05:02:43 2021 +0000 (UTC) 
+Fri May 21 05:17:43 2021 +0000 (UTC) Info: maximum execution time exceeded; initiating job termination

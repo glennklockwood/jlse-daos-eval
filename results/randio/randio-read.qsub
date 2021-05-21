@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#COBALT -n 3
+#COBALT -q presque
+#COBALT -t 0:15:00
+
+numnodes=3
+ppn=28
+
+export DFUSE_MOUNT="/tmp/$USER.dfuse"
+module use /soft/storage/daos/rhel/modulefiles
+module load daos
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall fusermount3 -u "$DFUSE_MOUNT"
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall killall dfuse
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall killall daos_agent
+export DAOS_POOL="cce33fae-0b21-4c82-b4ab-f99433bdf6ae" # DAOS v1.2 - May 17, 2021
+set -e
+set -x
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall mkdir -vp "$DAOS_AGENT_DIR"
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall daos_agent -i -o "$DAOS_AGENT_CONF" -l "$DAOS_AGENT_LOG" -s "$DAOS_AGENT_DIR" &
+sleep 2
+DAOS_CONT=$(daos pool list-cont --pool $DAOS_POOL | head -n1)
+if [ -z "$DAOS_CONT" ]; then
+    DAOS_CONT=$(daos cont create --pool $DAOS_POOL --type POSIX | cut -d' ' -f4)
+    export DAOS_CONT
+fi
+echo "Using pool $DAOS_POOL and container $DAOS_CONT"
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall mkdir -vp "$DFUSE_MOUNT"
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall dfuse --pool "$DAOS_POOL" --container "$DAOS_CONT" -m "$DFUSE_MOUNT" &
+sleep 2
+echo "Mounted ${DAOS_POOL}/${DAOS_CONT} at $DFUSE_MOUNT"
+export LD_PRELOAD="/soft/storage/daos/rhel/daos/install/lib64/libioil.so"
+# generate 112x 8g files
+mpirun -f $COBALT_NODEFILE -ppn $ppn -genvall "/home/glock/src/glior-3.3/install.jlse/bin/ior" \
+    -w -F -e -g -v -t 1m -b 1g -s 4 -z -k -p \
+    -o ${DFUSE_MOUNT}/randio -vv -k
+
+mpirun -f $COBALT_NODEFILE -ppn $ppn -genvall "/home/glock/src/glior-3.3/install.jlse/bin/ior" \
+    -r -F -e -g -v -t 4k -b 256m -D 45 -s 16 -z -p \
+    -o ${DFUSE_MOUNT}/randio -vv
+
+unset LD_PRELOAD
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall fusermount3 -u "$DFUSE_MOUNT"
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall killall dfuse
+mpirun -ppn 1 -f $COBALT_NODEFILE -genvall killall daos_agent
