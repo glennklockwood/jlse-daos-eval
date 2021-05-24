@@ -1,0 +1,210 @@
+DAOS Agent v1.2 (pid 118463) listening on /tmp/glock-daos_agent/daos_agent.sock
+DAOS Agent v1.2 (pid 211799) listening on /tmp/glock-daos_agent/daos_agent.sock
+DAOS Agent v1.2 (pid 81371) listening on /tmp/glock-daos_agent/daos_agent.sock
+Using pool cce33fae-0b21-4c82-b4ab-f99433bdf6ae and container b11ee85d-cbc2-413a-87c8-7b3292729bb4
+Mounted cce33fae-0b21-4c82-b4ab-f99433bdf6ae/b11ee85d-cbc2-413a-87c8-7b3292729bb4 at /tmp/glock.dfuse
+ior WARNING: preallocation only available in MPIIO.  Using value of 0.
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Mon May 24 17:22:41 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -w -F -e -g -v -t 1m -b 1g -s 4 -z -k -p -o /tmp/glock.dfuse/randio -vv -k
+Machine             : Linux skylake15.ftm.alcf.anl.gov 3.10.0-1062.9.1.el7.x86_64 #1 SMP Mon Dec 2 08:31:54 EST 2019 x86_64
+Using synchronized MPI timer
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Mon May 24 17:22:41 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 4.5%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 108
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/randio
+access              : file-per-process
+type                : independent
+segments            : 4
+ordering in a file  : random
+ordering inter file : no tasks offsets
+nodes               : 3
+tasks               : 108
+clients per node    : 36
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 1 GiB
+aggregate filesize  : 432 GiB
+
+Results: 
+Using Time Stamp 1621876961 (0x60abe0e1) for Data Signature
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+Commencing write performance test: Mon May 24 17:22:42 2021
+write     10468      10556      0.040443    1048576    1024.00    0.347656   41.91      0.013407   42.26      0   
+Max Write: 10468.17 MiB/sec (10976.67 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write       10468.17   10468.17   10468.17       0.00   10468.17   10468.17   10468.17       0.00   42.25840         NA            NA     0    108  36    1   1     0        1         0    0      4 1073741824  1048576  442368.0 POSIX      0
+Finished            : Mon May 24 17:23:24 2021
+ior WARNING: preallocation only available in MPIIO.  Using value of 0.
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Mon May 24 17:23:27 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -r -F -e -g -v -t 4k -b 256m -D 45 -s 16 -z -p -o /tmp/glock.dfuse/randio -vv
+Machine             : Linux skylake15.ftm.alcf.anl.gov 3.10.0-1062.9.1.el7.x86_64 #1 SMP Mon Dec 2 08:31:54 EST 2019 x86_64
+Using synchronized MPI timer
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Mon May 24 17:23:27 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 6.3%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 108
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/randio
+access              : file-per-process
+type                : independent
+segments            : 16
+ordering in a file  : random
+ordering inter file : no tasks offsets
+nodes               : 3
+tasks               : 108
+clients per node    : 36
+repetitions         : 1
+xfersize            : 4096 bytes
+blocksize           : 256 MiB
+aggregate filesize  : 432 GiB
+stonewallingTime    : 45
+stoneWallingWearOut : 0
+
+Results: 
+Using Time Stamp 1621877007 (0x60abe10f) for Data Signature
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing read performance test: Mon May 24 17:23:28 2021
+
+WARNING: Expected aggregate file size       = 463856467968.
+WARNING: Stat() of aggregate file size      = 463856467968.
+WARNING: Using actual aggregate bytes moved = 16285097984.
+WARNING: maybe caused by deadlineForStonewalling
+read      341.10     88201      0.000688    262144     4.00       0.437295   45.08      0.000499   45.53      0   
+remove    -          -          -           -          -          -          -          -          0.302168   0   
+Max Read:  341.10 MiB/sec (357.66 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+read          341.10     341.10     341.10       0.00   87320.41   87320.41   87320.41       0.00   45.53179         NA            NA     0    108  36    1   1     0        1         0    0     16 268435456     4096   15530.7 POSIX      0
+Finished            : Mon May 24 17:24:13 2021
+Signal received.  Caught terminated; shutting down
+Signal received.  Caught terminated; shutting down
+Signal received.  Caught terminated; shutting down

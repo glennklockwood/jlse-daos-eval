@@ -4,7 +4,7 @@
 #COBALT -t 0:15:00
 
 numnodes=3
-ppn=28
+ppn=18
 
 export DFUSE_MOUNT="/tmp/$USER.dfuse"
 module use /soft/storage/daos/rhel/modulefiles

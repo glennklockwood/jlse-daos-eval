@@ -1,0 +1,108 @@
+DAOS Agent v1.2 (pid 86727) listening on /tmp/glock-daos_agent/daos_agent.sock
+DAOS Agent v1.2 (pid 217151) listening on /tmp/glock-daos_agent/daos_agent.sock
+DAOS Agent v1.2 (pid 123964) listening on /tmp/glock-daos_agent/daos_agent.sock
+Using pool cce33fae-0b21-4c82-b4ab-f99433bdf6ae and container b11ee85d-cbc2-413a-87c8-7b3292729bb4
+Mounted cce33fae-0b21-4c82-b4ab-f99433bdf6ae/b11ee85d-cbc2-413a-87c8-7b3292729bb4 at /tmp/glock.dfuse
+ior WARNING: preallocation only available in MPIIO.  Using value of 0.
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Mon May 24 17:42:32 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -w -F -e -g -v -t 4k -b 32g -D 45 -s 1 -z -k -p -o /tmp/glock.dfuse/randio -vv
+Machine             : Linux skylake15.ftm.alcf.anl.gov 3.10.0-1062.9.1.el7.x86_64 #1 SMP Mon Dec 2 08:31:54 EST 2019 x86_64
+Using synchronized MPI timer
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Mon May 24 17:42:32 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 4.5%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 54
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/randio
+access              : file-per-process
+type                : independent
+segments            : 1
+ordering in a file  : random
+ordering inter file : no tasks offsets
+nodes               : 3
+tasks               : 54
+clients per node    : 18
+repetitions         : 1
+xfersize            : 4096 bytes
+blocksize           : 32 GiB
+aggregate filesize  : 1.69 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 0
+
+Results: 
+Using Time Stamp 1621878152 (0x60abe588) for Data Signature
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+Commencing write performance test: Mon May 24 17:42:32 2021
+WARNING: Expected aggregate file size       = 1855425871872.
+WARNING: Stat() of aggregate file size      = 1855376158720.
+WARNING: Using actual aggregate bytes moved = 11750461440.
+WARNING: maybe caused by deadlineForStonewalling
+write     243.28     62779      0.000005    33554432   4.00       0.362967   45.70      0.003398   46.06      0   
+Max Write: 243.28 MiB/sec (255.10 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write         243.28     243.28     243.28       0.00   62279.13   62279.13   62279.13       0.00   46.06303         NA            NA     0     54  18    1   1     0        1         0    0      1 34359738368     4096   11206.1 POSIX      0
+Finished            : Mon May 24 17:43:18 2021
