@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#COBALT -O clush-test
+#COBALT -n 2
+#COBALT -q presque
+#COBALT -t 0:15:00
+
+numnodes=2
+ppn=18
+
+# Set up environment
+. $HOME/.bashrc
+conda activate clush
+CLUSH="clush -n --hostfile $COBALT_NODEFILE"
+module use /soft/storage/daos/rhel/modulefiles
+module load daos
+test -f "$HOME/.daosrc" && source "$HOME/.daosrc"
+DAOS_POOL="${DAOS_POOL-cce33fae-0b21-4c82-b4ab-f99433bdf6ae}"
+DFUSE_MOUNT="${DFUSE_MOUNT-/tmp/$USER.dfuse}"
+
+# Start DAOS
+$CLUSH start-daos &
+clushpid=$!
+sleep 5
+
+# Make sure a container exists
+if [ -z "$DAOS_CONT" ]; then
+    DAOS_CONT=$(daos pool list-cont --pool $DAOS_POOL | head -n1)
+    if [ -z "$DAOS_CONT" ]; then
+        DAOS_CONT=$(daos cont create --pool $DAOS_POOL --type POSIX | cut -d' ' -f4)
+    fi
+    if grep -q DAOS_CONT "$HOME/.daosrc"; then
+        :
+    elif [ ! -z "$DAOS_CONT" ]; then
+        echo "export DAOS_CONT=\"$DAOS_CONT\"" >> "$HOME/.daosrc"
+    fi
+fi
+
+# Mount DAOS via DFuse
+$CLUSH mount-dfuse
+
+# Run the workload against $DFUSE_MOUNT
+mpirun -f $COBALT_NODEFILE \
+       -ppn $ppn \
+       -genvall \
+       -genv LD_PRELOAD "/soft/storage/daos/rhel/daos/install/lib64/libioil.so" "/home/glock/src/glior-3.3/install.jlse/bin/ior" \
+    -w -F -e -g -v -t 4k -b 32g -D 45 -s 1 -z -k -p \
+    -o ${DFUSE_MOUNT}/randio -vv
+
+# Stop DAOS
+kill $clushpid
+$CLUSH stop-daos.sh
