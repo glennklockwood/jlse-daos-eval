@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 DEFAULT_XFERSIZES="32m 8m 4m 1m 512k 4k 2880"
-DEFAULT_NUMNODESES="4 8 2 1" # terrible grammar
-DEFAULT_PPNS="16 8 4 2 1"
+DEFAULT_NUMNODESES="2 1" # terrible grammar
+DEFAULT_PPNS="36 18 16 8 4 2 1"
 DEFAULT_ACCESSES="write read"
 
 params="$(getopt -o t:n:p:o:i:a: -l transfersize:,numnodes:,ppn:,access: --name "$0" -- "$@")"

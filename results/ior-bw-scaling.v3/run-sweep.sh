@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SRUN="mpirun -f \$COBALT_NODEFILE -genvall"
+SRUN="mpirun -f \$COBALT_NODEFILE -genvall -genv LD_PRELOAD /soft/storage/daos/rhel/daos/install/lib64/libioil.so"
 DEFAULT_IOR="/home/glock/src/glior-3.3/install.jlse/bin/ior"
 DEFAULT_PARAMFILE="parameters.txt"
 
@@ -125,7 +125,7 @@ for paramset in "${permutations[@]}"; do
   sed -e "s@^XXX\$@${mpirun}@" run-ior.qsub > "$tmpfile"
   cat $tmpfile
   # qsub -q presque -n 1 -t 0:30:00 -I
-  jid=$(qsub -q presque -n ${numnodes} -t 30 "$tmpfile")
+  jid=$(qsub -q presque -n ${numnodes} -t 10 -O "${output_bn}-${access}-cobalt" "$tmpfile")
   cqwait "$jid"
   rm -v "$tmpfile"
   set +x
