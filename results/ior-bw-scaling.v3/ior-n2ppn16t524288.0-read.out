@@ -1,0 +1,83 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Tue May 25 00:10:24 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 512k -t 512k -s 1048576 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n2ppn16t524288.0.sws -o /tmp/glock.dfuse/ior-n2ppn16t524288.0.data -vv -r
+Machine             : Linux skylake16.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Tue May 25 00:10:24 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 6.7%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 32
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n2ppn16t524288.0.data
+access              : file-per-process
+type                : independent
+segments            : 1048576
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 2
+tasks               : 32
+clients per node    : 16
+repetitions         : 1
+xfersize            : 524288 bytes
+blocksize           : 524288 bytes
+aggregate filesize  : 16 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing read performance test: Tue May 25 00:10:24 2021
+
+0: stonewalling pairs accessed: 14796
+2: stonewalling pairs accessed: 14789
+5: stonewalling pairs accessed: 14748
+7: stonewalling pairs accessed: 15016
+10: stonewalling pairs accessed: 14753
+17: stonewalling pairs accessed: 15030
+28: stonewalling pairs accessed: 14888
+18: stonewalling pairs accessed: 15055
+13: stonewalling pairs accessed: 14667
+14: stonewalling pairs accessed: 14735
+12: stonewalling pairs accessed: 15096
+21: stonewalling pairs accessed: 15148
+1: stonewalling pairs accessed: 14740
+29: stonewalling pairs accessed: 15115
+19: stonewalling pairs accessed: 15139
+27: stonewalling pairs accessed: 14976
+30: stonewalling pairs accessed: 15194
+23: stonewalling pairs accessed: 14925
+3: stonewalling pairs accessed: 14640
+25: stonewalling pairs accessed: 14729
+11: stonewalling pairs accessed: 14822
+4: stonewalling pairs accessed: 14786
+6: stonewalling pairs accessed: 15025
+22: stonewalling pairs accessed: 14951
+15: stonewalling pairs accessed: 14838
+9: stonewalling pairs accessed: 14878
+24: stonewalling pairs accessed: 15010
+31: stonewalling pairs accessed: 14879
+8: stonewalling pairs accessed: 14493
+16: stonewalling pairs accessed: 14823
+26: stonewalling pairs accessed: 14746
+20: stonewalling pairs accessed: 15064
+stonewalling pairs accessed min: 14493 max: 15194 -- min data: 7.1 GiB mean data: 7.3 GiB time: 45.0s
+WARNING: Expected aggregate file size       = 17592186044416.
+WARNING: Stat() of aggregate file size      = 313817825280.
+WARNING: Using actual aggregate bytes moved = 254913019904.
+WARNING: maybe caused by deadlineForStonewalling
+read      5185       10426      46.01       512.00     512.00     0.249633   46.64      0.000371   46.89      0   
+remove    -          -          -           -          -          -          -          -          0.100378   0   
+Max Read:  5184.98 MiB/sec (5436.85 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+read         5184.98    5184.98    5184.98       0.00   10369.96   10369.96   10369.96       0.00   46.88620      45.00       5293.93     0     32  16    1   1     1        1         0    0 1048576   524288   524288  243104.0 POSIX      0
+Finished            : Tue May 25 00:11:11 2021

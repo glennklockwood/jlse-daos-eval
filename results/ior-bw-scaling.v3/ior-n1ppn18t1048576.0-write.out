@@ -1,0 +1,85 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Mon May 24 23:39:52 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 1m -t 1m -s 932067 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n1ppn18t1048576.0.sws -o /tmp/glock.dfuse/ior-n1ppn18t1048576.0.data -vv -w -k
+Machine             : Linux skylake16.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Mon May 24 23:39:52 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 5.1%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 18
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n1ppn18t1048576.0.data
+access              : file-per-process
+type                : independent
+segments            : 932067
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 1
+tasks               : 18
+clients per node    : 18
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 1 MiB
+aggregate filesize  : 16.00 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+no striping to set
+Commencing write performance test: Mon May 24 23:39:53 2021
+12: stonewalling pairs accessed: 8948
+14: stonewalling pairs accessed: 9021
+6: stonewalling pairs accessed: 9072
+5: stonewalling pairs accessed: 9201
+10: stonewalling pairs accessed: 9071
+17: stonewalling pairs accessed: 9221
+15: stonewalling pairs accessed: 9009
+11: stonewalling pairs accessed: 9084
+2: stonewalling pairs accessed: 8768
+16: stonewalling pairs accessed: 9073
+1: stonewalling pairs accessed: 9102
+4: stonewalling pairs accessed: 9317
+3: stonewalling pairs accessed: 9032
+8: stonewalling pairs accessed: 9104
+13: stonewalling pairs accessed: 9005
+9: stonewalling pairs accessed: 9031
+0: stonewalling pairs accessed: 8816
+7: stonewalling pairs accessed: 9204
+stonewalling pairs accessed min: 8768 max: 9317 -- min data: 8.6 GiB mean data: 8.8 GiB time: 45.0s
+WARNING: Expected aggregate file size       = 17592175558656.
+WARNING: Stat() of aggregate file size      = 175852486656.
+WARNING: Using actual aggregate bytes moved = 175852486656.
+WARNING: maybe caused by deadlineForStonewalling
+write     3561.05    3575.29    46.71       1024.00    1024.00    0.187300   46.91      0.000228   47.09      0   
+Max Write: 3561.05 MiB/sec (3734.03 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write        3561.05    3561.05    3561.05       0.00    3561.05    3561.05    3561.05       0.00   47.09454      45.01       3623.56     0     18  18    1   1     1        1         0    0 932067  1048576  1048576  167706.0 POSIX      0
+Finished            : Mon May 24 23:40:40 2021

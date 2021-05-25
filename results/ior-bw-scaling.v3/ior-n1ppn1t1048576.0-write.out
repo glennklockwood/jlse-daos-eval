@@ -1,0 +1,51 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Mon May 24 23:59:41 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 1m -t 1m -s 16777216 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n1ppn1t1048576.0.sws -o /tmp/glock.dfuse/ior-n1ppn1t1048576.0.data -vv -w -k
+Machine             : Linux skylake16.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Mon May 24 23:59:41 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 5.3%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 1
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n1ppn1t1048576.0.data
+access              : file-per-process
+type                : independent
+segments            : 16777216
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 1
+tasks               : 1
+clients per node    : 1
+repetitions         : 1
+xfersize            : 1 MiB
+blocksize           : 1 MiB
+aggregate filesize  : 16 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+no striping to set
+Commencing write performance test: Mon May 24 23:59:42 2021
+0: stonewalling pairs accessed: 18612
+stonewalling pairs accessed min: 18612 max: 18612 -- min data: 18.2 GiB mean data: 18.2 GiB time: 45.0s
+WARNING: Expected aggregate file size       = 17592186044416.
+WARNING: Stat() of aggregate file size      = 19516096512.
+WARNING: Using actual aggregate bytes moved = 19516096512.
+WARNING: maybe caused by deadlineForStonewalling
+write     409.13     410.91     45.29       1024.00    1024.00    0.197141   45.29      0.000014   45.49      0   
+Max Write: 409.13 MiB/sec (429.00 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+write         409.13     409.13     409.13       0.00     409.13     409.13     409.13       0.00   45.49188      45.00        413.59     0      1   1    1   1     1        1         0    0 16777216  1048576  1048576   18612.0 POSIX      0
+Finished            : Tue May 25 00:00:27 2021

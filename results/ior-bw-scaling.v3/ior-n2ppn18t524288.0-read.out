@@ -1,0 +1,87 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Tue May 25 00:06:20 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 512k -t 512k -s 932067 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n2ppn18t524288.0.sws -o /tmp/glock.dfuse/ior-n2ppn18t524288.0.data -vv -r
+Machine             : Linux skylake16.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Tue May 25 00:06:20 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 6.7%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 36
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n2ppn18t524288.0.data
+access              : file-per-process
+type                : independent
+segments            : 932067
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 2
+tasks               : 36
+clients per node    : 18
+repetitions         : 1
+xfersize            : 524288 bytes
+blocksize           : 524288 bytes
+aggregate filesize  : 16.00 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing read performance test: Tue May 25 00:06:20 2021
+
+6: stonewalling pairs accessed: 12960
+27: stonewalling pairs accessed: 13310
+32: stonewalling pairs accessed: 13528
+15: stonewalling pairs accessed: 13026
+12: stonewalling pairs accessed: 13056
+18: stonewalling pairs accessed: 13440
+3: stonewalling pairs accessed: 13188
+13: stonewalling pairs accessed: 13024
+25: stonewalling pairs accessed: 13633
+20: stonewalling pairs accessed: 13667
+21: stonewalling pairs accessed: 13648
+16: stonewalling pairs accessed: 13317
+34: stonewalling pairs accessed: 13869
+35: stonewalling pairs accessed: 13498
+30: stonewalling pairs accessed: 13468
+1: stonewalling pairs accessed: 13300
+5: stonewalling pairs accessed: 13088
+19: stonewalling pairs accessed: 13413
+7: stonewalling pairs accessed: 13141
+28: stonewalling pairs accessed: 13573
+11: stonewalling pairs accessed: 13435
+22: stonewalling pairs accessed: 13543
+33: stonewalling pairs accessed: 13803
+8: stonewalling pairs accessed: 13058
+23: stonewalling pairs accessed: 13385
+9: stonewalling pairs accessed: 13193
+24: stonewalling pairs accessed: 13680
+14: stonewalling pairs accessed: 13410
+29: stonewalling pairs accessed: 13661
+10: stonewalling pairs accessed: 13312
+2: stonewalling pairs accessed: 13277
+4: stonewalling pairs accessed: 13231
+17: stonewalling pairs accessed: 13359
+0: stonewalling pairs accessed: 13344
+31: stonewalling pairs accessed: 13596
+26: stonewalling pairs accessed: 13970
+stonewalling pairs accessed min: 12960 max: 13970 -- min data: 6.3 GiB mean data: 6.5 GiB time: 45.0s
+WARNING: Expected aggregate file size       = 17592175558656.
+WARNING: Stat() of aggregate file size      = 337907810304.
+WARNING: Using actual aggregate bytes moved = 263674920960.
+WARNING: maybe caused by deadlineForStonewalling
+read      5230       10515      47.12       512.00     512.00     0.254308   47.83      0.000465   48.08      0   
+remove    -          -          -           -          -          -          -          -          0.115042   0   
+Max Read:  5229.59 MiB/sec (5483.62 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+read         5229.59    5229.59    5229.59       0.00   10459.18   10459.18   10459.18       0.00   48.08407      45.00       5359.62     0     36  18    1   1     1        1         0    0 932067   524288   524288  251460.0 POSIX      0
+Finished            : Tue May 25 00:07:08 2021

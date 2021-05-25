@@ -1,0 +1,123 @@
+IOR-3.3.1+dev: MPI Coordinated Test of Parallel I/O
+Began               : Mon May 24 23:02:15 2021
+Command line        : /home/glock/src/glior-3.3/install.jlse/bin/ior -b 8m -t 8m -s 29127 -e -F -C -g -D 45 -O stoneWallingWearOut=1 -O stoneWallingStatusFile=/home/glock/src/jlse-daos-eval/results/ior-bw-scaling.v3/ior-n2ppn36t8388608.0.sws -o /tmp/glock.dfuse/ior-n2ppn36t8388608.0.data -vv -r
+Machine             : Linux skylake16.ftm.alcf.anl.gov
+Start time skew across all tasks: 0.00 sec
+TestID              : 0
+StartTime           : Mon May 24 23:02:15 2021
+Path                : /tmp/glock.dfuse
+FS                  : 22.7 TiB   Used FS: 6.3%   Inodes: -0.0 Mi   Used Inodes: 0.0%
+Participating tasks: 72
+Using reorderTasks '-C' (useful to avoid read cache in client)
+
+Options: 
+api                 : POSIX
+apiVersion          : 
+test filename       : /tmp/glock.dfuse/ior-n2ppn36t8388608.0.data
+access              : file-per-process
+type                : independent
+segments            : 29127
+ordering in a file  : sequential
+ordering inter file : constant task offset
+task offset         : 1
+nodes               : 2
+tasks               : 72
+clients per node    : 36
+repetitions         : 1
+xfersize            : 8 MiB
+blocksize           : 8 MiB
+aggregate filesize  : 16.00 TiB
+stonewallingTime    : 45
+stoneWallingWearOut : 1
+
+Results: 
+
+access    bw(MiB/s)  IOPS       Latency(s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ----       ----------  ---------- ---------  --------   --------   --------   --------   ----
+Commencing read performance test: Mon May 24 23:02:15 2021
+
+30: stonewalling pairs accessed: 285
+9: stonewalling pairs accessed: 284
+37: stonewalling pairs accessed: 297
+68: stonewalling pairs accessed: 301
+47: stonewalling pairs accessed: 302
+62: stonewalling pairs accessed: 302
+58: stonewalling pairs accessed: 297
+40: stonewalling pairs accessed: 305
+46: stonewalling pairs accessed: 296
+11: stonewalling pairs accessed: 284
+13: stonewalling pairs accessed: 284
+16: stonewalling pairs accessed: 284
+3: stonewalling pairs accessed: 284
+48: stonewalling pairs accessed: 305
+65: stonewalling pairs accessed: 298
+44: stonewalling pairs accessed: 304
+61: stonewalling pairs accessed: 304
+63: stonewalling pairs accessed: 298
+36: stonewalling pairs accessed: 299
+14: stonewalling pairs accessed: 283
+27: stonewalling pairs accessed: 285
+64: stonewalling pairs accessed: 301
+10: stonewalling pairs accessed: 283
+42: stonewalling pairs accessed: 301
+45: stonewalling pairs accessed: 299
+43: stonewalling pairs accessed: 301
+26: stonewalling pairs accessed: 285
+34: stonewalling pairs accessed: 285
+54: stonewalling pairs accessed: 301
+29: stonewalling pairs accessed: 281
+39: stonewalling pairs accessed: 299
+20: stonewalling pairs accessed: 283
+71: stonewalling pairs accessed: 298
+0: stonewalling pairs accessed: 283
+31: stonewalling pairs accessed: 285
+60: stonewalling pairs accessed: 298
+69: stonewalling pairs accessed: 299
+38: stonewalling pairs accessed: 302
+66: stonewalling pairs accessed: 301
+56: stonewalling pairs accessed: 302
+55: stonewalling pairs accessed: 301
+6: stonewalling pairs accessed: 282
+52: stonewalling pairs accessed: 303
+5: stonewalling pairs accessed: 282
+57: stonewalling pairs accessed: 300
+49: stonewalling pairs accessed: 303
+67: stonewalling pairs accessed: 299
+59: stonewalling pairs accessed: 300
+70: stonewalling pairs accessed: 301
+50: stonewalling pairs accessed: 305
+12: stonewalling pairs accessed: 285
+17: stonewalling pairs accessed: 285
+33: stonewalling pairs accessed: 285
+53: stonewalling pairs accessed: 303
+41: stonewalling pairs accessed: 303
+4: stonewalling pairs accessed: 284
+1: stonewalling pairs accessed: 284
+18: stonewalling pairs accessed: 284
+35: stonewalling pairs accessed: 282
+23: stonewalling pairs accessed: 282
+15: stonewalling pairs accessed: 283
+8: stonewalling pairs accessed: 287
+32: stonewalling pairs accessed: 284
+19: stonewalling pairs accessed: 285
+2: stonewalling pairs accessed: 284
+28: stonewalling pairs accessed: 286
+25: stonewalling pairs accessed: 285
+7: stonewalling pairs accessed: 281
+21: stonewalling pairs accessed: 284
+22: stonewalling pairs accessed: 286
+24: stonewalling pairs accessed: 286
+51: stonewalling pairs accessed: 302
+stonewalling pairs accessed min: 281 max: 305 -- min data: 2.2 GiB mean data: 2.3 GiB time: 45.1s
+WARNING: Expected aggregate file size       = 17592118935552.
+WARNING: Stat() of aggregate file size      = 338832654336.
+WARNING: Using actual aggregate bytes moved = 184213831680.
+WARNING: maybe caused by deadlineForStonewalling
+read      3579.04    452.21     48.49       8192       8192       0.522811   48.56      0.000979   49.09      0   
+remove    -          -          -           -          -          -          -          -          0.285377   0   
+Max Read:  3579.04 MiB/sec (3752.90 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev   Max(OPs)   Min(OPs)  Mean(OPs)     StdDev    Mean(s) Stonewall(s) Stonewall(MiB) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt   blksiz    xsize aggs(MiB)   API RefNum
+read         3579.04    3579.04    3579.04       0.00     447.38     447.38     447.38       0.00   49.08576      45.10       3734.58     0     72  36    1   1     1        1         0    0  29127  8388608  8388608  175680.0 POSIX      0
+Finished            : Mon May 24 23:03:04 2021
